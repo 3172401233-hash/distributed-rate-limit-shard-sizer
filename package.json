@@ -1,0 +1,17 @@
+{
+  "name": "distributed-rate-limit-shard-sizer",
+  "version": "0.1.0",
+  "description": "在限流分片漂移和突发流量下重分配全局令牌预算的容量规划器",
+  "type": "module",
+  "engines": {
+    "node": ">=24.16.0"
+  },
+  "exports": "./src/planner.js",
+  "bin": {
+    "shard-sizer": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "plan": "node bin/cli.js"
+  }
+}

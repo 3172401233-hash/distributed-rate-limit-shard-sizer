@@ -1,0 +1,24 @@
+{
+  "windowMs": 1000,
+  "maxMigrationRatio": 0.25,
+  "shards": [
+    { "id": "shard-a", "capacity": 5000 },
+    { "id": "shard-b", "capacity": 5000 },
+    { "id": "shard-c", "capacity": 5000 }
+  ],
+  "tenants": [
+    {
+      "id": "tenant-hot",
+      "qps": 4000,
+      "burst": 500,
+      "distribution": { "shard-a": 0.8, "shard-b": 0.1, "shard-c": 0.1 },
+      "currentBudget": { "shard-a": 2000, "shard-b": 1000, "shard-c": 1000 }
+    },
+    {
+      "id": "tenant-small",
+      "qps": 30,
+      "minQuota": 20,
+      "distribution": { "shard-a": 0.5, "shard-b": 0.3, "shard-c": 0.2 }
+    }
+  ]
+}
